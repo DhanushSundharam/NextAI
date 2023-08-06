@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextAI</title>
+    <link rel='shortcut icon' href="{%static 'images\favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css\style.css'%}">
+    
+    
+</head>
+<body class='full-page'>
+<div class='loader'>    
+    <div class="loading-container">
+        <div class="octocat"></div>
+        <div class="loading-text" style="color:white;"><h1>Welcome to NextAI</h1></div>
+      </div>
+    <div id="content" style="display: none;">  
+<div>   
+    <div class="chat-container">
+        <div class='mainpage'>
+        <div class="chat-header" >
+            <h1>NextAI</h1>
+        </div>    
+        </div>
+</div>        
+        <!-- index.html -->
+<style>
+    
+    .chat-messages {
+        width: 900px; 
+        height: 400px;
+        
+        
+    }
+
+   
+    .chat-input {
+        
+        
+    }
+
+    
+    #message-input {
+        width: 80%; 
+        
+    }
+
+    
+    #chat-form button {
+        width: 20%;
+        
+    }
+    
+    
+</style>
+<div class='mainpage'>
+<div class="chat-messages">
+    <div class="message received">
+        <p> The model is trained on an extensive and diverse dataset from the internet, allowing it to understand and generate human-like text in various languages and contexts.</p>
+    </div>
+    <div class="message sent">
+        <p>The model's capabilities span across multiple domains, including answering factual questions, providing explanations, offering creative writing, generating code snippets, translating text, and more. It can be used for interactive applications, virtual assistants, language translation services, and other text-based tasks.</p>
+    </div>
+    <!-- Add more chat messages here -->
+</div>
+
+<form id="chat-form" method="post">
+    {% csrf_token %}
+    <div class="chat-input">
+        <input name="NextAI1" id="message-input" type="text" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </div>
+</form>
+</div>
+
+{% if user_input %}
+    
+    <div > <pre>{{ user_input }}</pre></div>
+{% endif %}
+
+    </div>
+</div>
+<script>
+    // Show the content after 7 seconds
+    setTimeout(function() {
+        document.getElementById('content').style.display = 'block';
+        document.querySelector('.loading-container').style.display = 'none';
+    }, 3000); // 7 seconds
+</script>    
+    
+</body>
+</html>
