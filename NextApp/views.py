@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 def hi(request):
     return render(request,"NextApp/index.html")
 
